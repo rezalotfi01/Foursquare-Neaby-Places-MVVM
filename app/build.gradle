@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+
+allOpen {
+    // allows mocking for classes w/o directly opening them for release builds
+    annotation 'com.reza.mymvvm.testing.OpenClass'
+}
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        applicationId "com.reza.locationsmvvm"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionName version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        buildConfigField 'String', 'CLIENT_ID', "${client_id}"
+        buildConfigField 'String', 'CLIENT_SECRET', "${client_secret}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    kapt {
+        correctErrorTypes true
+    }
+
+
+    compileOptions {
+        sourceCompatibility source_compatibility_version
+        targetCompatibility target_compatibility_version
+    }
+    kotlinOptions {
+        jvmTarget = kotlin_jvm_version
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation implDeps
+    kapt compileDeps
+    testImplementation testImplDeps
+    androidTestImplementation androidTestImplDeps
+}

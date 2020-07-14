@@ -1,0 +1,152 @@
+
+ext {
+
+    // SDK and appversion_code = 1
+    version_name = '1.0'
+    build_tools_version = '29.0.3'
+    min_sdk_version = 19
+    target_sdk_version = 29
+    compile_sdk_version = 29
+
+    kotlin_version = '1.3.72'
+    gradle_version = '4.0.0'
+
+    source_compatibility_version = JavaVersion.VERSION_1_8
+    target_compatibility_version = JavaVersion.VERSION_1_8
+    kotlin_jvm_version = JavaVersion.VERSION_1_8
+    
+    // dependencies version
+    appCompat_version = '1.3.0-alpha01'
+    multidex_version = "2.0.1"
+    constraintLayout_version = '2.0.0-beta7'
+    legacy_support_version = '1.0.0'
+    coroutines_version = '1.3.7'
+    fragment_version = '1.2.4'
+    coil_version = '0.11.0'
+    gradle_version = '4.0.0'
+    ktlint_version = '0.30.0'
+    ktx_version = '1.3.0'
+    lifecycle_version = '2.2.0'
+    location_version = "17.0.0"
+    material_version = '1.3.0-alpha01'
+    navigation_version = '2.2.2'
+    recyclerView_version = '1.2.0-alpha03'
+    room_version = '2.3.0-alpha01'
+    preference_version = "1.1.1"
+    work_version = '2.3.4'
+    paging_version = '2.1.2'
+    gson_version = '2.8.6'
+    okhttp_version = '4.7.2'
+    retrofit_version = '2.9.0'
+    stetho_version = '1.5.1'
+    timber_version = '4.7.1'
+    dagger_version = '2.28.1'
+
+    // Testing tools version
+    junit_version = '4.13'
+    espresso_version = '3.2.0'
+    coreTesting_version = '2.1.0'
+    runner_version = '1.0.1'
+    testExtJunit_version = '1.1.1'
+    uiAutomator_version = '2.2.0'
+    mockito_version = '3.3.3'
+    mockitoAll_version = "1.10.19"
+    mockitoAndroid_version = '3.3.3'
+    mockwebserver_version = '4.7.2'
+    testCore_version = '1.2.0'
+    testRunner_version = '1.2.0'
+    testRules_version = '1.2.0'
+
+    //-------------------------------------------------------------------------------------------
+
+    // It's for use in Project-Level build.gradle file
+    projectLevelClasspathDeps = [
+            "com.android.tools.build:gradle:${gradle_version}",
+            "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+            "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version",
+            "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+    ]
+
+
+    // It's for App-Module-Level build.gradle file
+    implDeps = [
+            "androidx.appcompat:appcompat:$appCompat_version",
+            "androidx.multidex:multidex:$multidex_version",
+            "androidx.constraintlayout:constraintlayout:$constraintLayout_version",
+            "androidx.legacy:legacy-support-v4:$legacy_support_version",
+            "androidx.fragment:fragment-ktx:$fragment_version",
+            "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            "androidx.recyclerview:recyclerview:$recyclerView_version",
+            "androidx.room:room-runtime:$room_version",
+            "androidx.room:room-ktx:$room_version",
+            "androidx.preference:preference-ktx:$preference_version",
+            "androidx.paging:paging-runtime:$paging_version",
+            "androidx.work:work-runtime-ktx:$work_version",
+            "com.google.android.material:material:$material_version",
+            "com.google.android.gms:play-services-location:$location_version",
+
+            "androidx.core:core-ktx:$ktx_version",
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+
+            "io.coil-kt:coil:$coil_version",
+            "com.jakewharton.timber:timber:$timber_version",
+            "com.facebook.stetho:stetho:$stetho_version",
+            "com.facebook.stetho:stetho-okhttp3:$stetho_version",
+
+            // DI Dagger
+            "com.google.dagger:dagger:$dagger_version",
+            "com.google.dagger:dagger-android:$dagger_version",
+            "com.google.dagger:dagger-android-support:$dagger_version",
+
+            // Network
+            "com.google.code.gson:gson:$gson_version",
+            "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            "com.squareup.okhttp3:okhttp:$okhttp_version",
+            "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    ]
+    
+    compileDeps = [
+            "androidx.room:room-compiler:$room_version",
+
+            // DI
+            "com.google.dagger:dagger-compiler:$dagger_version",
+            "com.google.dagger:dagger-android-processor:$dagger_version"
+    ]
+    
+    testImplDeps = [
+            // Testing tools
+           "junit:junit:$junit_version",
+           "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",
+           "androidx.arch.core:core-testing:$coreTesting_version",
+           "org.mockito:mockito-core:$mockito_version"
+    ]
+    
+    androidTestImplDeps = [
+            // Android testing tools
+           "androidx.test:core:$testCore_version",
+           "androidx.test:runner:$testRunner_version",
+           "androidx.test:rules:$testRules_version",
+
+           "androidx.appcompat:appcompat:$appCompat_version",
+           "androidx.recyclerview:recyclerview:$recyclerView_version",
+           "com.google.android.material:material:$material_version",
+
+           "androidx.test.espresso:espresso-core:$espresso_version",
+           "androidx.test.espresso:espresso-contrib:$espresso_version",
+           "androidx.test.espresso:espresso-intents:$espresso_version",
+           "androidx.test.ext:junit:$testExtJunit_version",
+           "androidx.test.uiautomator:uiautomator:$uiAutomator_version",
+           "androidx.work:work-testing:$work_version",
+
+           "androidx.arch.core:core-testing:$coreTesting_version",
+           "org.mockito:mockito-core:$mockito_version",
+           "org.mockito:mockito-android:$mockitoAndroid_version"
+    ]
+}

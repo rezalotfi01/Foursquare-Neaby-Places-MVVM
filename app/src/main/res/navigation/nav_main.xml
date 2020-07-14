@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/placesFragment">
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.reza.mymvvm.pages.placeslist.ui.PlacesFragment"
+        android:label="places_fragment"
+        tools:layout="@layout/fragment_places">
+        <action
+            android:id="@+id/action_placesFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slidein_right"
+            app:exitAnim="@anim/slideout_left"
+            app:popEnterAnim="@anim/slidein_left"
+            app:popExitAnim="@anim/slideout_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.reza.mymvvm.pages.placedetails.ui.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>

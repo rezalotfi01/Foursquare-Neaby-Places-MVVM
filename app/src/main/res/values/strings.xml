@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Locations MVVM</string>
+    <string name="app_running">App running</string>
+
+    <string name="permission_denied_error">Application cannot work correctly without this permissions.</string>
+    <string name="grant">Grant</string>
+
+    <string name="call">Call them</string>
+    <string name="on_map">Show on map</string>
+    <string name="details">Details</string>
+
+    <string name="location_incorrect">Received location of this place incorrect</string>
+    <string name="cannot_connect_to_server">Cannot connect to server</string>
+</resources>
