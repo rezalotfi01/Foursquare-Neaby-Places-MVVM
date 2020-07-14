@@ -4,6 +4,7 @@ Introduction
 ------------
 
 This is an application for finding nearby locations with Foursquare API, that uses MVVM and Repository pattern, Offline-First, Single Source Of Truth Pattern with some principles of Clean Architecture.
+
 In this app I was followed Google recommended [Guide to app architecture](https://developer.android.com/jetpack/docs/guide).
 
 ![](/screenshot/mvvm-arch.png)
