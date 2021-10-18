@@ -1,4 +1,4 @@
-# Locations MVVM Project
+# Neaby Places Project (MVVM)
 
 Introduction
 ------------
